@@ -1,0 +1,49 @@
+# Build outputs
+build/
+dist/
+coverage/
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Cache
+.cache/
+.turbo/
+.eslintcache
+
+# Environment files
+.env*
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+# Package files
+*.tgz
+
+# Yarn
+.yarn/
+.pnp.*
+
+# Auto-generated files
+*.tsbuildinfo

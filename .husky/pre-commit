@@ -1,0 +1,2 @@
+# Executa o Lint-Staged nos arquivos staged antes do commit
+npx lint-staged

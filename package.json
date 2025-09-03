@@ -1,7 +1,8 @@
 {
-  "name": "n8n-nodes-teste",
+  "name": "n8n-nodes-customs",
   "version": "0.1.0",
   "description": "",
+  "type": "module",
   "keywords": [
     "n8n-community-node-package"
   ],
@@ -14,10 +15,26 @@
   "scripts": {
     "build": "npx rimraf dist && tsc && gulp build:icons",
     "dev": "tsc --watch",
-    "format": "prettier nodes credentials --write",
-    "lint": "eslint nodes credentials package.json",
-    "lintfix": "eslint nodes credentials package.json --fix",
+    "format": "prettier --write \"nodes credentials/**/*.{ts,js,json,md}\"",
+    "lint": "eslint \"nodes credentials/**/*.{ts,js}\" --fix",
+    "lintfix": "eslint . --fix",
+    "prepare": "husky",
+    "commit": "lint-staged && git-cz",
     "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "files": [
     "dist"
@@ -36,13 +53,24 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@types/node": "^24.3.0",
-    "@typescript-eslint/parser": "~8.32.0",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.32.0",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.57.0",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-n8n-nodes-base": "^1.16.3",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-react": "^7.37.5",
     "gulp": "^5.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.6",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.42.0"
   },
   "peerDependencies": {
     "n8n-workflow": "*"
