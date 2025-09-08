@@ -20,7 +20,8 @@
 	},
 	"main": "index.js",
 	"scripts": {
-		"build": "npx rimraf dist && tsc && gulp build:icons",
+		"build": "rimraf dist && tsc && gulp build:icons",
+		"pack": "npm pack",
 		"dev": "tsc --watch",
 		"format": "prettier --write \"nodes credentials/**/*.{ts,js,json,md}\"",
 		"lint": "eslint \"nodes credentials/**/*.{ts,js}\" --fix",
@@ -65,9 +66,9 @@
 		"@types/node": "^24.3.0",
 		"@typescript-eslint/eslint-plugin": "^8.42.0",
 		"@typescript-eslint/parser": "^8.32.0",
+		"braces": "^3.0.3",
 		"commitizen": "^4.3.1",
 		"cz-conventional-changelog": "^3.3.0",
-		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-n8n-nodes-base": "^1.16.3",
 		"eslint-plugin-prettier": "^5.5.4",
@@ -75,11 +76,20 @@
 		"gulp": "^5.0.0",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.1.6",
+		"lodash": "^4.17.21",
+		"minimist": "^1.2.6",
 		"prettier": "^3.5.3",
+		"shelljs": "^0.10.0",
+		"tmp": "^0.2.4",
 		"typescript": "^5.8.2",
 		"typescript-eslint": "^8.42.0"
 	},
 	"peerDependencies": {
-		"n8n-workflow": "*"
+		"n8n-workflow": "^1.17.0"
+	},
+	"dependencies": {
+		"eslint": "^9.35.0",
+		"glob": "^11.0.3",
+		"rimraf": "^6.0.1"
 	}
 }
