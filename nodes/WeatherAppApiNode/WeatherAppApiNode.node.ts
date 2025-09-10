@@ -28,7 +28,7 @@ interface ApiError {
 	message: string;
 }
 
-export class WeatherAppApi implements INodeType {
+export class WeatherAppApiNode implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Weather App',
 		name: 'weatherAppApi',
