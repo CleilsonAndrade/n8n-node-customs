@@ -51,13 +51,15 @@
 		"n8nNodesApiVersion": 1,
 		"credentials": [
 			"dist/credentials/ExampleCredentialsApi.credentials.js",
-			"dist/credentials/HttpBinApi.credentials.js"
+			"dist/credentials/HttpBinApi.credentials.js",
+			"dist/credentials/WeatherAppApi.credentials.ts"
 		],
 		"nodes": [
 			"dist/nodes/ExampleNode/ExampleNode.node.js",
 			"dist/nodes/HttpBin/HttpBin.node.js",
 			"dist/nodes/ApiNode/ApiNode.node.js",
-			"dist/nodes/SimulatedApiTrigger/SimulatedApiTrigger.node.js"
+			"dist/nodes/SimulatedApiTrigger/SimulatedApiTrigger.node.js",
+			"dist/nodes/WeatherAppApiNode/WeatherAppApi.node.ts"
 		]
 	},
 	"devDependencies": {
@@ -69,6 +71,7 @@
 		"braces": "^3.0.3",
 		"commitizen": "^4.3.1",
 		"cz-conventional-changelog": "^3.3.0",
+		"eslint": "^8.57.1",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-n8n-nodes-base": "^1.16.3",
 		"eslint-plugin-prettier": "^5.5.4",
@@ -88,7 +91,7 @@
 		"n8n-workflow": "^1.17.0"
 	},
 	"dependencies": {
-		"eslint": "^9.35.0",
+		"dotenv": "^17.2.2",
 		"glob": "^11.0.3",
 		"rimraf": "^6.0.1"
 	}
